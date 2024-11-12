@@ -1,0 +1,341 @@
+/* Resetowanie podstawowych stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ustawienia podstawowe dla całego ekranu */
+html, body {
+    min-height: 100vh; /* Minimalna wysokość strony to 100% ekranu */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f7f4ef;
+    line-height: 1.6;
+    scrollbar-width: thin; /* Ustawia szerokość na "cienką" */
+    scrollbar-color: #4b3b2b #f3f2e9; /* Uchwyt oraz tło paska */
+
+}
+
+/* Ustawienie main tak, aby zajmował resztę dostępnej wysokości */
+main {
+    flex: 1;
+    padding: 2em;
+    max-width: 1200px;
+    margin: auto;
+    color: #4b3b2b;
+    padding-top: 100px; 
+
+}
+
+/* Stylizacja nagłówka */
+/* Stylizacja nagłówka */
+header {
+    position: fixed;
+    top: -100px; /* Początkowo ukryj nagłówek poza ekranem */
+    left: 0;
+    width: 100%;
+    background: radial-gradient(circle at center, #6d4f3a, #4b3b2b 80%);
+    color: #fff;
+    padding: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease;
+    z-index: 1000;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    background-color: #6d4f3a;
+    color: #f9f7f3;
+}
+
+/* Klasa widocznego nagłówka */
+header.visible {
+    top: 0; /* Przesuń nagłówek na widoczną pozycję */
+}
+header nav a.active {
+    background-color: #f9f7f3; /* lub inny kolor, np. lekki beż */
+    color: #4b3b2b; /* kolor tekstu dla aktywnej strony */
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}
+section {
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: #f3f2e9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formularz */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    background-color: #f3f2e9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input, select, textarea {
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4b3b2b;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #6d4f3a;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background: radial-gradient(circle at center, #6d4f3a, #4b3b2b 80%);
+    color: #fff;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.gallery {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamiczne kolumny o min szerokości 200px */
+    flex-wrap: wrap;  
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;       
+    margin-top: 20px;
+    align-items: center;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;                   /* Dopasowanie elementu do siatki */
+    max-width: 200px;              /* Maksymalna szerokość elementu */
+    height: 200px;                 /* Wysokość elementu */
+    display: flex;
+    place-content: center;
+    background-color: #e0e0e0;     /* Kolor tła, jeśli obraz się nie wczyta */
+    align-items: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+    align-items: center;
+}
+
+.gallery-item:hover img {
+    align-items: center;
+    transform: scale(1.1);
+}
+
+/* Stylizacja podpisów na obrazach */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    font-size: 0.9em;
+}
+
+.gallery-item:hover .caption {
+    transform: translateY(0);
+}
+
+
+/* Styl dla całego paska przewijania */
+::-webkit-scrollbar {
+    width: 12px; /* Szerokość paska dla przewijania pionowego */
+    height: 12px; /* Wysokość paska dla przewijania poziomego */
+}
+
+/* Kolor paska przewijania (tło) */
+::-webkit-scrollbar-track {
+    background: #f3f2e9; /* Kolor tła paska */
+    border-radius: 10px;
+}
+
+/* Styl "thumb" - uchwyt paska przewijania */
+::-webkit-scrollbar-thumb {
+    background-color: #4b3b2b; /* Kolor uchwytu */
+    border-radius: 10px; /* Zaokrąglenie uchwytu */
+    border: 3px solid #f3f2e9; /* Dodanie przestrzeni wokół uchwytu */
+}
+
+/* Zmiana koloru uchwytu przy najechaniu kursorem */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #6d4f3a; /* Kolor uchwytu przy najechaniu kursorem */
+}
+/* Styl dla przycisku widoczności nagłówka */
+#toggleHeader {
+    background-color: #4b3b2b; /* Podstawowy kolor tła */
+    color: #fff; /* Kolor tekstu */
+    border: none; /* Usuń domyślną obramowanie */
+    padding: 10px 20px; /* Wewnętrzne odstępy */
+    font-size: 10px; /* Wielkość czcionki */
+    font-weight: bold; /* Grubość czcionki */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Zmiana kursora na rękę */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animacja */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+/* Styl przycisku po najechaniu kursorem */
+#toggleHeader:hover {
+    background-color: #6d4f3a; /* Zmiana koloru po najechaniu */
+    transform: scale(1.05); /* Powiększenie przycisku przy najechaniu */
+}
+
+/* Styl przycisku po kliknięciu */
+#toggleHeader:active {
+    transform: scale(0.95); /* Delikatne zmniejszenie po kliknięciu */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Mniejszy cień */
+}
+
+.video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Zapewnia, że wideo nie przekracza szerokości ekranu */
+.video-section video {
+    max-width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 2em; /* Rozmiar czcionki dla tytułu */
+    color: #4b3b2b; /* Kolor tekstu, dopasowany do stylu strony */
+    margin-bottom: 20px; /* Odstęp od galerii */
+}
+
+.center{
+    text-align: center; 
+}
+#sourcesBtn {
+    background-color: #4b3b2b; /* Podstawowy kolor tła */
+    color: #fff; /* Kolor tekstu */
+    border: none; /* Usuń domyślną obramowanie */
+    padding: 10px 20px; /* Wewnętrzne odstępy */
+    font-size: 10px; /* Wielkość czcionki */
+    font-weight: bold; /* Grubość czcionki */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    cursor: pointer; /* Zmiana kursora na rękę */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animacja */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Delikatny cień */
+}
+
+#sourcesBtn:hover {
+    background-color: #6d4f3a;
+}
+
+.modal {
+    display: none; /* Ukryj modal domyślnie */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+    z-index: 10000; /* Wysoki z-index, aby modal był na wierzchu */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styl głównego kontenera treści modala */
+.modal-content {
+    background-color: #f7f4ef;
+    color: #4b3b2b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 80%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+/* Styl przycisku zamykania */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #4b3b2b;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #6d4f3a; /* Zmiana koloru przy najechaniu */
+}
+
+/* Styl listy źródeł w modal */
+.modal-content ul {
+    list-style: none;      /* Bez punktów przy liście */
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.modal-content li {
+    margin: 10px 0;
+}
+
+.modal-content a {
+    color: #4b3b2b;        /* Kolor odnośników */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.modal-content a:hover {
+    color: #6d4f3a;        /* Zmiana koloru na hover */
+}
