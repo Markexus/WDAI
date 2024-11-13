@@ -68,26 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 document.addEventListener('DOMContentLoaded', () => {
-    // Pobieranie elementów modala
-    const sourcesBtn = document.getElementById('sourcesBtn'); // Przycisk otwierający modal
-    const sourcesModal = document.getElementById('sourcesModal'); // Modal do wyświetlenia
-    const closeModal = sourcesModal ? sourcesModal.querySelector('.close') : null; // Przycisk zamykania w modal
+    const sourcesBtn = document.getElementById('sourcesBtn'); 
+    const sourcesModal = document.getElementById('sourcesModal'); 
+    const closeModal = sourcesModal ? sourcesModal.querySelector('.close') : null; 
 
-    // Funkcja otwierająca modal po kliknięciu przycisku
     if (sourcesBtn && sourcesModal) {
         sourcesBtn.addEventListener("click", () => {
-            sourcesModal.style.display = "flex"; // Wyświetlenie modala
+            sourcesModal.style.display = "flex"; 
         });
     }
 
-    // Funkcja zamykająca modal po kliknięciu przycisku zamykającego
     if (closeModal) {
         closeModal.addEventListener("click", () => {
-            sourcesModal.style.display = "none"; // Ukrycie modala
+            sourcesModal.style.display = "none"; 
         });
     }
 
-    // Funkcja zamykająca modal po kliknięciu poza modalem
     window.addEventListener("click", (event) => {
         if (event.target === sourcesModal) {
             sourcesModal.style.display = "none";
