@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Haseł</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Generator Haseł</h1>
+    <div class="form-container">
+        <label>
+            Minimalna długość hasła:
+            <input type="number" id="min-length" min="1" value="8">
+        </label>
+        <label>
+            Maksymalna długość hasła:
+            <input type="number" id="max-length" min="1" value="12">
+        </label>
+        <label>
+            <input type="checkbox" id="uppercase"> Wielkie litery
+        </label>
+        <label>
+            <input type="checkbox" id="special"> Znaki specjalne
+        </label>
+        <button id="generate-password">Wygeneruj hasło</button>
+    </div>
+
+    <script>
+        document.getElementById('generate-password').addEventListener('click', () => {
+            const minLength = parseInt(document.getElementById('min-length').value, 10);
+            const maxLength = parseInt(document.getElementById('max-length').value, 10);
+            const useUppercase = document.getElementById('uppercase').checked;
+            const useSpecial = document.getElementById('special').checked;
+
+            if (minLength > maxLength || minLength < 1) {
+                alert("Podaj poprawne wartości długości hasła!");
+                return;
+            }
+
+            const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+            const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const specialChars = "!@#$%^&*()_+[]{}<>?";
+            const digits = "0123456789";
+            let allChars = lowerChars + digits;
+
+            if (useUppercase) allChars += upperChars;
+            if (useSpecial) allChars += specialChars;
+
+            const passwordLength = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
+            let password = "";
+            for (let i = 0; i < passwordLength; i++) {
+                const randomIndex = Math.floor(Math.random() * allChars.length);
+                password += allChars[randomIndex];
+            }
+
+            alert(`Wygenerowane hasło: ${password}`);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Stoper</h1>
+    <div class="time-display" id="time-display">0s</div>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let seconds = 0;
+        let intervalId = null;
+
+        function updateTimeDisplay() {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            document.getElementById('time-display').textContent =
+                minutes > 0 ? `${minutes}min ${secs}s` : `${secs}s`;
+        }
+
+        document.getElementById('start').addEventListener('click', () => {
+            if (!intervalId) {
+                intervalId = setInterval(() => {
+                    seconds++;
+                    updateTimeDisplay();
+                }, 1000);
+            }
+        });
+
+        document.getElementById('stop').addEventListener('click', () => {
+            clearInterval(intervalId);
+            intervalId = null;
+        });
+
+        document.getElementById('reset').addEventListener('click', () => {
+            clearInterval(intervalId);
+            intervalId = null;
+            seconds = 0;
+            updateTimeDisplay();
+        });
+    </script>
+</body>
+</html>
