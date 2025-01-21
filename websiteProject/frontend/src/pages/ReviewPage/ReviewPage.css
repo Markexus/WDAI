@@ -1,0 +1,137 @@
+/* Ogólne stylowanie strony */
+.review-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Nagłówki */
+.review-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0056b3;
+    text-align: center;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+}
+
+.review-page h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Formularz dodawania opinii */
+.review-form {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.review-form textarea {
+    width: 95%; /* Dopasowanie do reszty */
+    max-width: 100%; /* Ustaw limit szerokości */
+    height: 50px; /* Mniejsza wysokość */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.review-form input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.review-form button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-form button:hover {
+    background-color: #004494;
+}
+
+.review-form p {
+    color: #d9534f;
+    margin-top: 10px;
+}
+
+/* Lista opinii */
+.review-list {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.review-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-item p {
+    margin: 5px 0;
+}
+
+.review-item button {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+}
+
+.review-item button:hover {
+    background-color: #c9302c;
+}
+
+/* Stylowanie pustej listy */
+.review-list p {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .review-page {
+        padding: 15px;
+    }
+
+    .review-form textarea {
+        height: 60px;
+    }
+
+    .review-form button,
+    .review-item button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

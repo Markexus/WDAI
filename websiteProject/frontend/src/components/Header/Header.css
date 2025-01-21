@@ -1,0 +1,58 @@
+.header {
+  background: linear-gradient(90deg, #00bcd4, #002147);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Dodano, by upewnić się, że elementy mieszczą się */
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease; /* Dodano płynne przejście */
+}
+
+.header a:hover {
+  color: white; /* Zmiana koloru tekstu */
+  transform: scale(1.1); /* Powiększenie elementu */
+  text-decoration: none; /* Brak podkreślenia */
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.header .actions {
+  display: flex;
+  gap: 10px; /* Odstępy między przyciskami */
+}
+
+.header .actions button {
+  background-color: white;
+  color: #002147;
+  border: none;
+  padding: 8px 12px; /* Zmniejszono padding */
+  border-radius: 8px;
+  font-size: 0.9rem; /* Zmniejszono rozmiar czcionki */
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header .actions button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,10 @@
+.product-stage {
+  display: flex;
+  flex-wrap: wrap; /* Zawijanie elementów */
+  gap: 20px; /* Odstępy między kartami */
+  background-color: var(--secondary-color);
+  padding: 20px;
+  margin-bottom: 50px;
+  max-width: 100%; /* Ograniczenie szerokości */
+  box-sizing: border-box; /* Zapobiega wyciekom */
+}

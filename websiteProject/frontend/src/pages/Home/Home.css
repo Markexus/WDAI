@@ -1,0 +1,12 @@
+.home-container {
+    background-color: var(--secondary-color);
+    padding: 20px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 300px 1fr; /* Ustalona szerokość dla Filters */
+    gap: 20px;
+    align-items: start;
+    margin-top: 20px;
+}

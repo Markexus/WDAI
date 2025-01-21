@@ -1,0 +1,125 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-image {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.product-details h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #002147;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.product-details .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.product-details .category,
+.product-details .description,
+.product-details .rating,
+.product-details .availability {
+    font-size: 1.1rem;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.product-details .availability {
+    font-weight: 600;
+    color: #28a745;
+}
+
+.product-details .availability:not(:contains("W magazynie")) {
+    color: #dc3545;
+}
+
+.add-to-cart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.add-to-cart:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.cart-message {
+    margin-top: 10px;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1rem;
+    animation: fadeInOut 3s ease-in-out;
+}
+/* Link do opinii o produkcie */
+.product-details .rating a {
+    text-decoration: none;
+    color: #0056b3; /* Niebieski kolor linku */
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.product-details .rating a:hover {
+    color: #003d80; /* Ciemniejszy odcień przy najechaniu */
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.product-details .rating {
+    margin-top: 15px; /* Odstęp od poprzednich elementów */
+    font-size: 16px; /* Lekko powiększony tekst */
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

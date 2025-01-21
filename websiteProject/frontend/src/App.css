@@ -1,0 +1,63 @@
+:root {
+    --primary-color: #00bcd4;
+    --secondary-color: #e0f7fa;
+    --highlight-color: #002147;
+    --button-hover: #80deea;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background-color: var(--secondary-color);
+    color: var(--highlight-color);
+    overflow-x: hidden; /* Usunięcie poziomego scrolla */
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%; /* Zapobiega nadmiarowym szerokościom */
+    overflow-x: hidden;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--heading-font);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+  }
+
+  .error {
+    color: white;
+    font-size: 1rem;
+    background-color: red;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+  }
+  

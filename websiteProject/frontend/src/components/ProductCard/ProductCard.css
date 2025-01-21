@@ -1,0 +1,48 @@
+.product-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 320px; /* Stała wysokość kart */
+  width: 15rem; /* Pełna szerokość */
+  justify-content: space-between;
+  text-decoration: none; /* Usunięcie podkreślenia linku */
+  color: inherit; /* Dziedziczenie koloru */
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 140px; /* Obrazek dopasowany */
+  object-fit: contain;
+}
+
+.product-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: var(--highlight-color);
+  flex-grow: 1; /* Wypełnienie przestrzeni */
+  display: flex;
+  align-items: center; /* Wyśrodkowanie pionowe */
+  justify-content: center; /* Wyśrodkowanie poziome */
+  text-align: center;
+  text-decoration: none; /* Usunięcie podkreślenia */
+}
+
+.product-card .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #002147; /* Kolor ceny */
+  margin-top: auto; /* Ustawienie ceny na dole */
+}
